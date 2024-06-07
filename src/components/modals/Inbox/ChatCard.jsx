@@ -1,9 +1,23 @@
 import { Box, Divider, Typography } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ChatCard(props) {
   const [showAction, setShowAction] = useState(false);
+  const actionRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (actionRef.current && !actionRef.current.contains(event.target)) {
+      setShowAction(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <>
       <Box
@@ -47,11 +61,11 @@ export default function ChatCard(props) {
             />
           )}
           <Box
+          ref={actionRef}
             display={showAction ? "flex" : "none"}
             sx={{
               backgroundColor: "white",
               zIndex: 5,
-              //   padding: "14px 18px",
               borderRadius: "5px",
               border: "1px solid #BDBDBD",
             }}

@@ -9,21 +9,6 @@ export default function ChatView({ chat, setReadMessage, setChat }) {
   const [reply, setReply] = useState(null);
   const [messages, setMessages] = useState([]);
   const [messageSend, setMessageSend] = useState('')
-  useEffect(() => {
-    if (reply) {
-      // setMessages((prev) => [
-      //   ...prev,
-      //   {
-      //     id: chat.messages.length + 1,
-      //     message: reply+'.',
-      //     time: new Date().getHours().toString() + ":" + new Date().getMinutes().toString(),
-      //     sender: "You",
-      //     nameColor: "#9B51E0",
-      //     backgroundColor: "#EEDCFF",
-      //   },
-      // ]);
-    }
-  }, [reply]);
 
   const sendMessage = () => {
     setMessages((prev) => [
@@ -84,8 +69,8 @@ export default function ChatView({ chat, setReadMessage, setChat }) {
         position="relative"
         gap="16px"
       >
-        {messages?.map((item) => (
-          <ChatCard item={item} key={item.id} setReply={setReply} />
+        {messages?.map((item, index) => (
+          <ChatCard item={item} key={index} setReply={setReply} />
         ))}
       </Box>
       {reply && (
