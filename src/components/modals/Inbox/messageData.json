@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "109220-Naturalization",
+    "date": "January 1,2021 19:10",
+    "name": "Cameron Phillips",
+    "message": "Please check this out!",
+    "readStatus": false
+  },
+  {
+    "id": 2,
+    "title": "Jeannette Moraima Guaman Chamba (Hutto I-589) [ Hutto Follow Up - Brief Service ]",
+    "date": "02/06/2021 10:45",
+    "name": "Ellen",
+    "message": "Hey, please read.",
+    "readStatus": true
+  },
+  {
+    "id": 3,
+    "title": "8405-Diana SALAZAR MUNGUIA",
+    "date": "01/06/2021 12:19",
+    "name": "Cameron Phillips",
+    "message": "I understand your initial concerns and thats very valid, Elizabeth. But you ...",
+    "readStatus": true
+  },
+  {
+    "id": 4,
+    "title": "FastVisa Support",
+    "date": "01/06/2021 12:19",
+    "name": "Cameron Phillips",
+    "message": "Hey there! Welcome to your inbox.",
+    "readStatus": true
+  }
+]
