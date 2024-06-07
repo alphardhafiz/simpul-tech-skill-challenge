@@ -92,7 +92,12 @@ export default function TaskList({ item, index }) {
   const bookmarks = watch(`data.${index}.bookmarks`);
 
   return (
-    <div style={{ borderRadius: "0 !important", borderBottom: "1px solid #828282" }}>
+    <div
+      style={{
+        borderRadius: "0 !important",
+        borderBottom: "1px solid #828282",
+      }}
+    >
       <Accordion
         sx={{
           boxShadow: "0",
@@ -132,7 +137,12 @@ export default function TaskList({ item, index }) {
               color: "#828282",
             }}
           />
-          <Box display="flex" gap="22px" alignItems="start" sx={{ position: "relative" }}>
+          <Box
+            display="flex"
+            gap="22px"
+            alignItems="start"
+            sx={{ position: "relative" }}
+          >
             <input
               type="checkbox"
               style={{ height: "16px", width: "16px", zIndex: 2 }}
@@ -141,7 +151,11 @@ export default function TaskList({ item, index }) {
             />
             {!editTask ? (
               <Typography
-                sx={{ textDecoration: `${watch(`data.${index}.status`) ? "line-through" : "none"} !important` }}
+                sx={{
+                  textDecoration: `${
+                    watch(`data.${index}.status`) ? "line-through" : "none"
+                  } !important`,
+                }}
                 color="#4F4F4F"
                 onClick={(event) => event.stopPropagation()}
                 fontWeight="600"
@@ -171,7 +185,14 @@ export default function TaskList({ item, index }) {
           </Box>
         </AccordionSummary>
         <AccordionDetails sx={{ padding: "0" }}>
-          <Box sx={{ paddingLeft: "40px", display: "flex", gap: "13px", flexDirection: "column" }}>
+          <Box
+            sx={{
+              paddingLeft: "40px",
+              display: "flex",
+              gap: "13px",
+              flexDirection: "column",
+            }}
+          >
             <Box display="flex" alignItems="center" gap="20px">
               <img
                 src={isCalendarOpen ? clockIcon : clockIconNotActive}
@@ -191,6 +212,9 @@ export default function TaskList({ item, index }) {
                 src={editTask ? editIcon : editIconNotActive}
                 alt="edit icon"
                 height="16px"
+                style={{
+                  cursor: "pointer",
+                }}
                 width="16px"
                 onClick={() => setEditTask(!editTask)}
               />
@@ -241,6 +265,7 @@ export default function TaskList({ item, index }) {
                     style={{
                       backgroundColor: bookmark.backgroundColor,
                       padding: "8px 12px",
+                      cursor: "pointer",
                       borderRadius: "8px",
                       fontWeight: "600",
                       color: "#4F4F4F",
@@ -261,6 +286,9 @@ export default function TaskList({ item, index }) {
               src={isBookmarkOpen ? markIcon : markIconNotActive}
               alt="mark icon"
               height="26px"
+              style={{
+                cursor: "pointer",
+              }}
               width="26px"
               onClick={() => setIsBookmarkOpen(!isBookmarkOpen)}
             />
@@ -268,7 +296,9 @@ export default function TaskList({ item, index }) {
               {bookmarks &&
                 bookmarks.length > 0 &&
                 bookmarkItems
-                  .filter((bookmark) => bookmarks.includes(bookmark.id.toString()))
+                  .filter((bookmark) =>
+                    bookmarks.includes(bookmark.id.toString())
+                  )
                   .map((bookmark) => (
                     <Typography
                       key={bookmark.id}
