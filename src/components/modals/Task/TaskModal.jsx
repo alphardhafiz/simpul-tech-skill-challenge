@@ -1,24 +1,15 @@
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Box,
   Button,
-  Checkbox,
-  Divider,
   FormControl,
   MenuItem,
   Select,
-  TextField,
-  Typography,
 } from "@mui/material";
 import propTypes from "prop-types";
 import { useEffect, useState } from "react";
 import taskData from "./taskData.json";
 import Spinner from "../../Spinner";
-
 import { FormProvider, useFieldArray, useForm } from "react-hook-form";
-
 import "react-datepicker/dist/react-datepicker.css";
 import TaskList from "./TaskList";
 
@@ -140,7 +131,7 @@ export default function TaskModal(props) {
               <Box
                 sx={{
                   width: "100%",
-                  height: "calc(100% - 32px)",
+                  height: "calc(737px - 32px)",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
